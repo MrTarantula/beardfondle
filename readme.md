@@ -5,7 +5,11 @@ Inspired by [WTFJS](https://github.com/denysdovhan/wtfjs). This library extends 
 ## How to Use
 
 ```js
+//JavaScript
 var bf = require('beardfondle');
+
+//TypeScript
+import bf = require('beardfondle');
 
 var foo = 'ocelot';
 var bar = foo.beard();
@@ -20,7 +24,7 @@ console.log(baz);
 
 ```
 
-`String.fondle()` is not needed to decode the library. Just open any browser and type `console.log((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+({[{}]:{}}+[])[!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+([![]]+[][[]])[+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+({[{}]:{}}+[])[+!+[]])`. Through the magic of JavaScript you will get a string back.
+`String.fondle()` is not needed to decode the library. Just open any browser console and type `console.log((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+({[{}]:{}}+[])[!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+([![]]+[][[]])[+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+({[{}]:{}}+[])[+!+[]])`. Through the magic of JavaScript you will get a string back.
 
 **NOTE:** `String.fondle()` does not simply decode they symbols back to characters. The method is a wrapper for `eval()` with some basic checks to prevent malicious use. ***DO NOT USE THIS LIBRARY IN PRODUCTION. `eval()` IS ALMOST NEVER SAFE.*** 
 
