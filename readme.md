@@ -5,6 +5,8 @@ Inspired by [WTFJS](https://github.com/denysdovhan/wtfjs). This library extends 
 ## How to Use
 
 ```js
+var bf = require('beardfondle');
+
 var foo = 'ocelot';
 var bar = foo.beard();
 
@@ -18,10 +20,14 @@ console.log(baz);
 
 ```
 
+`String.fondle()` is not needed to decode the library. Just open any browser and type `console.log((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+({[{}]:{}}+[])[!+[]+!+[]]+([![]]+[][[]])[+!+[]+[+[]]]+([![]]+[][[]])[+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+({[{}]:{}}+[])[+!+[]])`. Through the magic of JavaScript you will get a string back.
+
+**NOTE:** `String.fondle()` does not simply decode they symbols back to characters. The method is a wrapper for `eval()` with some basic checks to prevent malicious use. ***DO NOT USE THIS LIBRARY IN PRODUCTION. `eval()` IS ALMOST NEVER SAFE.*** 
+
 The individual symbols can be accessed by importing the package and accessing the `symbols` object:
 
 ```js
-var bf = require('../dist/index.min');
+var bf = require('beardfondle');
 
 console.log(bf.symbols.a);
 // (![]+[])[+!+[]]
@@ -67,7 +73,19 @@ u
 
 ### How does it work?
 
-#### TODO
+According to [WTFS](https://github.com/denysdovhan/wtfjs#its-a-fail):
+
+> So we try adding `[]` to `false`. But due to a number of internal function calls (`binary + Operator` -> `ToPrimitive` -> `[[DefaultValue]]`) we end up > converting the right operand to a string:
+> 
+> ```js
+> (![]+[].toString()) // 'false'
+> ```
+> 
+> Thinking of a string as an array we can access its first character via `[0]`:
+> 
+> ```js
+> 'false'[0] // -> 'f'
+> ```
 
 That's why only certain letters are supported. So far I've only figured out `true`, `false`, `undefined`, and `[object Object]`.
 
