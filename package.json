@@ -1,7 +1,6 @@
 {
   "name": "beardfondle",
   "version": "0.1.0",
-  "private": true,
   "description": "Novel JS strings through function calls",
   "main": "dist/beardfondle.min.js",
   "scripts": {
