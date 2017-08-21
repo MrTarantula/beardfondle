@@ -1,27 +1,30 @@
 {
   "name": "beardfondle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Novel JS strings through function calls",
-  "main": "dist/beardfondle.min.js",
+  "main": "dist/beardfondle.js",
+  "types": "dist/beardfondle.d.ts",
   "scripts": {
-    "test": "jasmine",
-    "build": "rimraf dist && mkdir dist && uglifyjs index.js -c -m -o dist/beardfondle.min.js"
+    "test": "npm run build && jasmine",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/MrTarantula/beardfondle"
   },
-  "keywords": ["funny", "weird", "javascript horror"],
+  "keywords": [
+    "funny",
+    "weird",
+    "javascript horror"
+  ],
   "bugs": {
     "url": "https://github.com/MrTarantula/beardfondle/issues"
   },
   "author": "mrtarantula",
   "license": "ISC",
   "devDependencies": {
-    "del": "^3.0.0",
     "jasmine": "^2.7.0",
-    "rimraf": "^2.6.1",
-    "uglify-js": "^3.0.28"
+    "typescript": "^2.4.2"
   },
   "dependencies": {}
 }

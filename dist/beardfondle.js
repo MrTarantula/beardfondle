@@ -1,31 +1,34 @@
-function beard() {
-    var fart = '';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+String.prototype.beard = function () {
+    var builder = '';
     for (var i = 0, len = this.length; i < len; i++) {
-        if (symbols[this[i]]) {
-            fart += symbols[this[i]];
+        if (exports.symbols[this[i]]) {
+            builder += exports.symbols[this[i]];
             if (i !== len - 1) {
-                fart += '+';
+                builder += '+';
             }
-        } else {
+        }
+        else {
             throw 'Bad character somewhere';
         }
     }
-    return fart;
-}
-
-function fondle() {
+    return builder;
+};
+String.prototype.fondle = function () {
     var acceptable = '!+({[:]})';
     for (var i = 0, len = this.length; i < len; i++) {
         if (acceptable.indexOf(this[i]) < 0) {
             throw 'Bad character somewhere';
         }
     }
-    /* jshint -W061 */
+    // tslint:disable-next-line:no-eval
     return eval('(' + this + ')');
-    /* jshint +W061 */
-}
-
-var symbols = {
+};
+/**
+ * Representation of characters supported by beardfondle
+ */
+exports.symbols = {
     'a': '(![]+[])[+!+[]]',
     'b': '({[{}]:{}}+[])[!+[]+!+[]]',
     'c': '({[{}]:{}}+[])[!+[]+!+[]+!+[]+!+[]+!+[]]',
@@ -42,23 +45,18 @@ var symbols = {
     's': '(![]+[])[!+[]+!+[]+!+[]]',
     't': '(!![]+[])[+[]]',
     'u': '(!![]+[])[!+[]+!+[]]',
-    '0': '+[]',
-    '1': '+!+[]',
-    '2': '+!+[]+!+[]',
-    '3': '+!+[]+!+[]+!+[]',
-    '4': '+!+[]+!+[]+!+[]+!+[]',
-    '5': '+!+[]+!+[]+!+[]+!+[]+!+[]',
-    '6': '+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]',
-    '7': '+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]',
-    '8': '+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]',
-    '9': '+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]',
+    '0': '[+[]]',
+    '1': '[+!+[]]',
+    '2': '[+!+[]+!+[]]',
+    '3': '[+!+[]+!+[]+!+[]]',
+    '4': '[+!+[]+!+[]+!+[]+!+[]]',
+    '5': '[+!+[]+!+[]+!+[]+!+[]+!+[]]',
+    '6': '[+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]',
+    '7': '[+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]',
+    '8': '[+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]',
+    '9': '[+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]',
     ' ': '({[{}]:{}}+[])[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]',
     '[': '({[{}]:{}}+[])[+[]]',
     ']': '({[{}]:{}}+[])[+!+[]+[+!+[]+!+[]+!+[]+!+[]]]'
 };
-
-module.exports = {
-    beard: String.prototype.beard = beard,
-    fondle: String.prototype.fondle = fondle,
-    symbols: symbols
-};
+//# sourceMappingURL=beardfondle.js.map

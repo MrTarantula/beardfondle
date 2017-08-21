@@ -1,9 +1,10 @@
-var bf = require('../index');
-
+var bf = require('../dist/beardfondle');
+"this".beard
 describe('beard', function () {
-    it('should convert string to craziness', function () {
-        expect('aa'.beard()).toEqual(bf.symbols.a + '+' + bf.symbols.a);
+    it('should convert a single character', function () {
+        expect('a'.beard()).toEqual(bf.symbols.a);
     });
+
     it('should convert all valid characters', function () {
         expect(Object.keys(bf.symbols).join('').beard()).toBe(Object.values(bf.symbols).join('+'));
     });
@@ -16,11 +17,15 @@ describe('beard', function () {
 });
 
 describe('fondle', function () {
-    it('should convert back to string', function () {
-        expect(bf.symbols.a.fondle()).toEqual('a');
+    it('should convert a single letter back to a character', function () {
+        expect(bf.symbols.a.fondle()).toBe('a');
     });
 
-    it('should not allow for malicious use of eval()', function () {
+    it('should convert all encoded characters back to string', function () {
+        expect(Object.values(bf.symbols).join('+').fondle()).toBe(Object.keys(bf.symbols).join(''));
+    });
+
+    it('should not allow any characters not supported by package', function () {
         expect(function () {
             'console.log("You should not see me!")'.fondle();
         }).toThrow('Bad character somewhere');
