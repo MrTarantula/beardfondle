@@ -1,0 +1,20 @@
+{
+  "name": "beardfondle",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Novel JS strings through function calls",
+  "main": "dist/beardfondle.min.js",
+  "scripts": {
+    "test": "jasmine",
+    "build": "rimraf dist && mkdir dist && uglifyjs index.js -c -m -o dist/beardfondle.min.js"
+  },
+  "author": "MrTarantula",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "jasmine": "^2.7.0",
+    "rimraf": "^2.6.1",
+    "uglify-js": "^3.0.28"
+  },
+  "dependencies": {}
+}
