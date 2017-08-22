@@ -1,5 +1,5 @@
 var bf = require('../dist/beardfondle');
-"this".beard
+
 describe('beard', function () {
     it('should convert a single character', function () {
         expect('a'.beard()).toEqual(bf.symbols.a);

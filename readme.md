@@ -77,9 +77,9 @@ u
 
 ### How does it work?
 
-According to [WTFS](https://github.com/denysdovhan/wtfjs#its-a-fail):
+According to [WTFJS](https://github.com/denysdovhan/wtfjs#its-a-fail):
 
-> So we try adding `[]` to `false`. But due to a number of internal function calls (`binary + Operator` -> `ToPrimitive` -> `[[DefaultValue]]`) we end up > converting the right operand to a string:
+> So we try adding `[]` to `false`. But due to a number of internal function calls (`binary + Operator` -> `ToPrimitive` -> `[[DefaultValue]]`) we end up converting the right operand to a string:
 > 
 > ```js
 > (![]+[].toString()) // 'false'
