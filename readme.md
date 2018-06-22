@@ -48,8 +48,9 @@ c
 d
 e
 f
+i  (lower)
+I  (upper)
 j
-i
 l
 n  (lower)
 N  (upper)
@@ -59,6 +60,7 @@ r
 s
 t
 u
+y
 0
 1
 2
@@ -92,11 +94,11 @@ According to [WTFJS](https://github.com/denysdovhan/wtfjs#its-a-fail):
 > 'false'[0] // -> 'f'
 > ```
 
-That's why only certain letters are supported. So far I've only figured out `true`, `false`, `NaN`, `undefined`, and `[object Object]`.
+That's why only certain letters are supported. So far I've only figured out `true`, `false`, `NaN`, `undefined`, `Infinity`, and `[object Object]`.
 
 ### Why did you make this?
 
-Because I wanted to, and nobody else has yet.
+Because I wanted to.
 
 ### What's with the name?
 

@@ -2,7 +2,7 @@ var bf = require('../dist/beardfondle');
 
 describe('beard', function () {
     it('should convert a single character', function () {
-        expect('a'.beard()).toEqual(bf.symbols.a);
+        expect('y'.beard()).toEqual(bf.symbols.y);
     });
 
     it('should convert all valid characters', function () {

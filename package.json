@@ -1,6 +1,6 @@
 {
   "name": "beardfondle",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Novel JS strings through function calls",
   "main": "dist/beardfondle.js",
   "types": "dist/beardfondle.d.ts",
